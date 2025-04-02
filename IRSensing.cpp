@@ -12,7 +12,7 @@ void IR::Init(){
   1: Black*/
 
 bool IR::OnStartingLine(){
-  if(digitalRead(IR_M) && (digitalRead(IR_L)) && (digitalRead(IR_R))){
+  if(digitalRead(IR_M) && (digitalRead(IR_L)) && (digitalRead(IR_R))){ // 111
     return true; 
   }
   else{
@@ -23,7 +23,7 @@ bool IR::OnStartingLine(){
 
 uint8_t IR::Tracking(){
   //M_IR on Track
-  if(digitalRead(IR_M) && !(digitalRead(IR_L)) && !(digitalRead(IR_R)))
+  if(digitalRead(IR_M) && !(digitalRead(IR_L)) && !(digitalRead(IR_R))) 
     return OnTrack;
   //R_IR on Track 
   if((!digitalRead(IR_M) && (!digitalRead(IR_L)) && (digitalRead(IR_R))) || (digitalRead(IR_M) && (!digitalRead(IR_L)) && (digitalRead(IR_R))))
